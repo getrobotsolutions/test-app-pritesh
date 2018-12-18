@@ -33,7 +33,6 @@
             <button onclick="setHeadRoll()"> SetHeadRoll() </button>
         </td>
     </tr>
-
     <tr>
         <td>
             Yaw: <input id="txt_yaw" type="text" width="50">
@@ -41,6 +40,16 @@
         </td>
         <td>
             <button onclick="setHeadYaw()"> SetHeadYaw() </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Angular Velocity: <input id="txt_av" type="text" width="50">
+            Linear Velocity: <input id="txt_lv" type="text" width="50">
+            Seconds: <input id="txt_sec" type="text" width="50">
+        </td>
+        <td>
+            <button onclick="driveWheelTime()"> DriveWheelTime() </button>
         </td>
     </tr>
 </table>
@@ -62,10 +71,17 @@
         SetHeadYaw(yaw,velocity);
     }
 
+    function driveWheelTime()
+    {
+        var lv = document.getElementById("txt_lv").value;
+        var av = document.getElementById("txt_av").value;
+        var sec = document.getElementById("txt_sec").value;
+        DriveWheelTime(lv, av, sec);
+    }
+
 
     /*window.external.SetHeadPitch(pitch, velocity);
 
-    window.external.SetHeadYaw(yaw, velocity);
 
     window.external.SetWaistPitch(pitch, velocity);
 
