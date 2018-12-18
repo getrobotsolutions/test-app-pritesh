@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseCommand.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/BaseEvent.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/LogConsole.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/Language.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Scripts/custom.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.3.1.min.js"></script>
+
+</head>
+
+
+<body  onbeforeunload="JSUnload()" ondragstart="return false;" ondrop="return false;" style="-ms-user-select:none;" oncontextmenu="return false;">
+
+<header>
+    <div class="logo">
+        <h1>ARS Test Bed App</h1>
+        <p>priest Ver: 0.0</p>
+    </div>
+</header>
+
+<table>
+    <tr>
+        <td>
+            Roll: <input id="txt_roll" type="text" width="50">
+            Velocity: <input id="velocity" type="text" width="50">
+        </td>
+        <td>
+            <button onclick="headRoll()"> SetHeadRoll() </button>
+        </td>
+    </tr>
+</table>
+
+
+<script>
+    function headRoll()
+    {
+        var roll = -25;
+        var velocity = 50;
+        window.external.SetHeadRoll(roll, velocity);
+    }
+
+
+    window.external.SetHeadPitch(pitch, velocity);
+
+    window.external.SetHeadYaw(yaw, velocity);
+
+    window.external.SetWaistPitch(pitch, velocity);
+
+    window.external.DriveWheel(linearVelocity, angularVelocity);
+
+    window.external.DriveWheelTime(linearVelocity, angularVelocity,nTime);
+
+    window.external.StopWheel();
+
+</script>
+
+
+</body>
+</html>
