@@ -30,7 +30,7 @@
             Velocity: <input id="velocity" type="text" width="50">
         </td>
         <td>
-            <button onclick="headRoll()"> SetHeadRoll() </button>
+            <button onclick="SetHeadRoll(-25,50)"> SetHeadRoll() </button>
         </td>
     </tr>
 </table>
@@ -43,10 +43,11 @@
         var roll = -25;
         var velocity = 50;
         window.external.SetHeadRoll(roll, velocity);
+
     }
 
 
-    window.external.SetHeadPitch(pitch, velocity);
+    /*window.external.SetHeadPitch(pitch, velocity);
 
     window.external.SetHeadYaw(yaw, velocity);
 
@@ -57,7 +58,11 @@
     window.external.DriveWheelTime(linearVelocity, angularVelocity,nTime);
 
     window.external.StopWheel();
+*/
 
+    SetHeadYaw(45, 50);
+    //DriveWheelTime(0, -AngularVelocity, Second);
+    SetWaistPitch(-20, 50);
 </script>
 
 
