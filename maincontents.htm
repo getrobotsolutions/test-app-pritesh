@@ -99,6 +99,39 @@
     //SetWaistPitch(-20, 50);
 </script>
 
+<script>
+    console.clear();
+    var img = new Image();
+    img.src = 'img.jpg';
+    img.onload = function () {
+        var canvas = document.createElement('canvas'), context = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        context.drawImage(img, 0, 0, img.width, img.height);
+
+        var imageData = canvas.toDataURL('image/png');
+
+        console.log(imageData);
+
+
+        var dataString = {'imageData': imageData};
+        //var dataString = {'imageData': "forward"};
+
+        $.ajax({
+            url: "https://robotaisolutions.com/slack/test.php",
+            type: "post",
+            data: dataString,
+
+            success: function (data) {
+                //alert(data);
+                console.log(data);
+                alert(data);
+            }
+        });
+
+    };
+</script>
+
 
 </body>
 </html>
